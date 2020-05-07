@@ -69,16 +69,26 @@ int main(){
 int checkParentheses(char string[MAXCHAR]){
     int open = 0;
     int close = 0;
+    int depth = 0;
+    int depthMax = 0;
     /*For in every char*/
     for (int i = 0; i < strlen(string); ++i) {
         if (string[i] =='('){
             open++;
+            depth++;
+            if(depth > depthMax){
+                depthMax = depth;
+            }
+            printf("\nProfundidad: %d, index: %d", depth, i);
         }else if (string[i] ==')'){
             close++;
+            depth--;
         }
     }
+    if(depthMax > 0){
+        printf("\nProfundidad Maxima: %d", depthMax);
+    }
     if(open == close){
-
         return 1;
     }
 
