@@ -12,11 +12,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46dc2856-0c3e-473f-8b48-49c364b500b7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/metodosPila.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/C.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/pila.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/pila.c.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Pilas_Punteros.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Pilas_Punteros.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Pilas_Punteros.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Pilas_Punteros.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pila.c" beforeDir="false" afterPath="$PROJECT_DIR$/pila.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pila.h" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -69,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588783159905</updated>
       <workItem from="1588783164181" duration="13881000" />
+      <workItem from="1588888304824" duration="16443000" />
     </task>
     <servers />
   </component>
@@ -84,21 +99,21 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="980" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1588825354726" />
-    <state width="754" height="220" key="GridCell.Tab.0.bottom" timestamp="1588833719381">
+    <state width="1557" height="220" key="GridCell.Tab.0.bottom" timestamp="1588970562144">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="220" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1588833719381" />
-    <state width="754" height="220" key="GridCell.Tab.0.center" timestamp="1588833719381">
+    <state width="1557" height="220" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1588970562144" />
+    <state width="1557" height="220" key="GridCell.Tab.0.center" timestamp="1588970562144">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="220" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1588833719381" />
-    <state width="754" height="220" key="GridCell.Tab.0.left" timestamp="1588833719381">
+    <state width="1557" height="220" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1588970562144" />
+    <state width="1557" height="220" key="GridCell.Tab.0.left" timestamp="1588970562144">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="220" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1588833719381" />
-    <state width="754" height="220" key="GridCell.Tab.0.right" timestamp="1588833719381">
+    <state width="1557" height="220" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1588970562144" />
+    <state width="1557" height="220" key="GridCell.Tab.0.right" timestamp="1588970562144">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="754" height="220" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1588833719381" />
+    <state width="1557" height="220" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1588970562144" />
   </component>
 </project>

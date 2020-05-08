@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/main.c" "C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/main.c.obj"
+  "C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/metodosPila.c" "C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/metodosPila.c.obj"
   "C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/pila.c" "C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/cmake-build-debug/CMakeFiles/Pilas_Punteros.dir/pila.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/main.c
-ctype.h
--
 stdio.h
 -
 unistd.h
@@ -19,12 +17,6 @@ string.h
 -
 stdlib.h
 -
-pila.h
-C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/pila.h
-
-C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/pila.h
-stdio.h
--
-malloc.h
+conio.h
 -
 

@@ -149,6 +149,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles\Pilas_Punteros.dir\build.make CMakeFiles/Pilas_Punteros.dir/main.c.s
 .PHONY : main.c.s
 
+metodosPila.obj: metodosPila.c.obj
+
+.PHONY : metodosPila.obj
+
+# target to build an object file
+metodosPila.c.obj:
+	$(MAKE) -f CMakeFiles\Pilas_Punteros.dir\build.make CMakeFiles/Pilas_Punteros.dir/metodosPila.c.obj
+.PHONY : metodosPila.c.obj
+
+metodosPila.i: metodosPila.c.i
+
+.PHONY : metodosPila.i
+
+# target to preprocess a source file
+metodosPila.c.i:
+	$(MAKE) -f CMakeFiles\Pilas_Punteros.dir\build.make CMakeFiles/Pilas_Punteros.dir/metodosPila.c.i
+.PHONY : metodosPila.c.i
+
+metodosPila.s: metodosPila.c.s
+
+.PHONY : metodosPila.s
+
+# target to generate assembly for a file
+metodosPila.c.s:
+	$(MAKE) -f CMakeFiles\Pilas_Punteros.dir\build.make CMakeFiles/Pilas_Punteros.dir/metodosPila.c.s
+.PHONY : metodosPila.c.s
+
 pila.obj: pila.c.obj
 
 .PHONY : pila.obj
@@ -188,6 +215,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... metodosPila.obj
+	@echo ... metodosPila.i
+	@echo ... metodosPila.s
 	@echo ... pila.obj
 	@echo ... pila.i
 	@echo ... pila.s

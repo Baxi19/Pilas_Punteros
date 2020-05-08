@@ -79,6 +79,9 @@
 		<Unit filename="C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/main.c">
 			<Option target="Pilas_Punteros"/>
 		</Unit>
+		<Unit filename="C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/metodosPila.c">
+			<Option target="Pilas_Punteros"/>
+		</Unit>
 		<Unit filename="C:/Users/Baxi/Documents/C Proyects/Pilas_Punteros/pila.c">
 			<Option target="Pilas_Punteros"/>
 		</Unit>

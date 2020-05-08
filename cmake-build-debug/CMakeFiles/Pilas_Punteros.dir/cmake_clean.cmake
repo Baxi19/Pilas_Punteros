@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Pilas_Punteros.dir/main.c.obj"
+  "CMakeFiles/Pilas_Punteros.dir/metodosPila.c.obj"
   "CMakeFiles/Pilas_Punteros.dir/pila.c.obj"
   "Pilas_Punteros.exe"
   "Pilas_Punteros.exe.manifest"
