@@ -44,6 +44,14 @@ nodo *infijaPostfija(char expresion[]);
 nodoFloat *crearPilaFloat(nodoFloat *pila);
 nodoFloat *pushFloat(float valor, nodoFloat *pila);
 nodoFloat *popFloat(float *valor, nodoFloat *pila);
+
+float sumar(float operando1, float operando2);
+float restar(float operando1, float operando2);
+float multiplicar(float operando1, float operando2);
+float dividir(float operando1, float operando2);
+float potencia(float operando1, float operando2);
+float calcular(float operando1, float operando2,float (*calcula)(float a,float b));
+
 float operacion(float operando1, float operando2, char operador);
 float evaluarPostfija(char expresion[]);
 
@@ -56,7 +64,7 @@ int main(){
     /*Menu para el usuario final*/
     int  opcion;
     do
-    {   printf("\n*********************************************************************************");
+    {   printf("\n\n*********************************************************************************");
         printf( "\n   1. Convertir Expresion de Infija a Postfija");
         printf( "\n   2. Salir." );
         printf( "\n\n   Introduzca opci%cn (1-2): ", 162 );
@@ -286,7 +294,6 @@ nodo *infijaPostfija(char expresion[]){
     }
     return postFija;
 }
-
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*nueva pila tipo float*/
 nodoFloat *crearPilaFloat(nodoFloat *pila){
@@ -321,24 +328,54 @@ nodoFloat *popFloat(float *valor, nodoFloat *pila){
     return pila;
 }
 /*--------------------------------------------------------------------------------------------------------------------*/
+/*suma*/
+float sumar(float operando1, float operando2){
+    return operando1+operando2;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*resta*/
+float restar(float operando1, float operando2){
+    return operando1-operando2;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*multiplicar*/
+float multiplicar(float operando1, float operando2){
+    return operando1*operando2;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*dividir*/
+float dividir(float operando1, float operando2){
+    return operando1/operando2;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*potencia*/
+float potencia(float operando1, float operando2){
+    return pow(operando1 , operando2);
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*calcular*/
+float calcular(float operando1, float operando2,float (*calcula)(float a,float b)){
+    return calcula(operando1,operando2);
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
 /*calcula el tipo de operacion*/
 float operacion(float operando1, float operando2, char operador){
     switch(operador) {
         case '+' :
-            return operando1+operando2;
-            break;
+            return calcular(operando1,operando2,sumar);
+
         case '-' :
-            return operando1-operando2;
-            break;
+            return calcular(operando1,operando2,restar);
+
         case '*' :
-            return operando1*operando2;
-            break;
+            return calcular(operando1,operando2,multiplicar);
+
         case '/' :
-            return operando1/operando2;
-            break;
+            return calcular(operando1,operando2,dividir);
+
         case '^' :
-            return pow(operando1 , operando2);
-            break;
+            return calcular(operando1,operando2,potencia);
+
     }
 }
 /*--------------------------------------------------------------------------------------------------------------------*/
