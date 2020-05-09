@@ -5,31 +5,47 @@
 #include <string.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <math.h>
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*Randald Villegas Brenes*/
-/*Practica para la casa de lenguaje C*/
+/*Practica de pila y punteros para la casa de lenguaje C*/
 /*06/05/2020*/
 /*--------------------------------------------------------------------------------------------------------------------*/
 #define MAXCHAR 10000
 /*--------------------------------------------------------------------------------------------------------------------*/
-/*structs*/
+/*structs y definiciones*/
 struct structNodo{
     char simbolo;
     struct structNodo *siguiente;
 };
+struct structNodoFloat{
+    float valor;
+    struct structNodoFloat *siguiente;
+};
+
 typedef struct structNodo nodo;
+typedef struct structNodoFloat nodoFloat;
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*Declaracion de los Metodos*/
+void leerArchivo();
+
 nodo *crearLista(nodo *lista);
 nodo *push(char simbolo, nodo*pila);
 nodo *insertNodoFinal(char simbolo, nodo *lista);
 nodo *pop(char *valor, nodo *pila);
 nodo imprimirExpression(nodo *lista);
+char* obtenerExpression(nodo *lista);
 
 int expresionBalanceada(char expresion[]);
 int esOperador(char simbolo);/*1 si es operador, 0 si no*/
 int prioridad(char operador);
 nodo *infijaPostfija(char expresion[]);
+
+nodoFloat *crearPilaFloat(nodoFloat *pila);
+nodoFloat *pushFloat(float valor, nodoFloat *pila);
+nodoFloat *popFloat(float *valor, nodoFloat *pila);
+float operacion(float operando1, float operando2, char operador);
+float evaluarPostfija(char expresion[]);
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*Applicacion*/
@@ -37,7 +53,28 @@ nodo *infijaPostfija(char expresion[]);
 int main(){
 
     /*----------------------------------------------------------------------------------------------------------------*/
-    /*VARS*/
+    /*Menu para el usuario final*/
+    int  opcion;
+    do
+    {   printf("\n*********************************************************************************");
+        printf( "\n   1. Convertir Expresion de Infija a Postfija");
+        printf( "\n   2. Salir." );
+        printf( "\n\n   Introduzca opci%cn (1-2): ", 162 );
+        scanf( "%d", &opcion );
+
+        switch ( opcion ){
+            case 1:
+                leerArchivo();
+                break;
+        }
+    } while ( opcion != 2 );
+    printf("Gracias por utilizar el programa!");
+    return 0;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*METODOS*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+void leerArchivo(){
     char path[MAXCHAR];
     char cwd[PATH_MAX];
     nodo *postFija;
@@ -49,36 +86,34 @@ int main(){
         printf("\n\nLa ubicacion del archivo de texto es: %s\n", path);
     } else {
         perror("\n\nError al ubicar del archivo");
-        return 1;
+        return ;
     }
     /*----------------------------------------------------------------------------------------------------------------*/
-    /*Intentamos abrir el archivo*/
     FILE *fp;
     char str[MAXCHAR];
     char* filename = path;
+    /*----------------------------------------------------------------------------------------------------*/
     /*modo de lectura*/
     fp = fopen(filename, "r");
     if (fp == NULL){
         printf("\n\nNo se pudo abrir el archivo %s",filename);
-        return 1;
+        return ;
     }
-    /*----------------------------------------------------------------------------------------------------------------*/
+    /*----------------------------------------------------------------------------------------------------*/
     /*ciclo para leer cada renglon del archivo*/
     while (fgets(str, MAXCHAR, fp) != NULL){
         printf("\nEXPRESION: %s",str);
         if(expresionBalanceada(str)){
             postFija = infijaPostfija(str);
+            printf("\nPOSTFIJA:");
             imprimirExpression(postFija);
+            printf("\nResultado: %f", evaluarPostfija(obtenerExpression(postFija)));
         }else{
             printf("Expresion no valida!");
         }
     }
     fclose(fp);
-
-    return 0;
 }
-/*--------------------------------------------------------------------------------------------------------------------*/
-/*METODOS*/
 /*--------------------------------------------------------------------------------------------------------------------*/
 /*Nueva lista*/
 nodo *crearLista(nodo *lista){
@@ -133,12 +168,28 @@ nodo *pop(char *valor, nodo *pila){
     return pila;
 }
 /*--------------------------------------------------------------------------------------------------------------------*/
+/*copiar expresion*/
+char* obtenerExpression(nodo *lista){
+    char* expresion = (char *) malloc(1);
+    char str[MAXCHAR] ;
+    int index = 0;
+
+    nodo *nodoAuxiliar;
+    nodoAuxiliar = lista;
+    while(nodoAuxiliar != NULL){
+        str[index] = nodoAuxiliar->simbolo;
+        nodoAuxiliar=nodoAuxiliar->siguiente;
+        index++;
+    }
+    strcpy(expresion, str);
+    return expresion;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
 /*mostrar expresion*/
 nodo imprimirExpression(nodo *lista){
     nodo *nodoAuxiliar;
     nodoAuxiliar = lista;
-    printf("\nPOSTFIJA:");
-    while(nodoAuxiliar !=NULL){
+    while(nodoAuxiliar != NULL){
         printf("%c ", nodoAuxiliar->simbolo);
         nodoAuxiliar=nodoAuxiliar->siguiente;
     }
@@ -183,9 +234,9 @@ int prioridad(char operador){
     }else if(operador == '('){
         return 0;
     }
-
 }
 /*--------------------------------------------------------------------------------------------------------------------*/
+/*Logica del algoritmo*/
 nodo *infijaPostfija(char expresion[]){
     nodo * pila, *postFija;
     int longitudExpresion;
@@ -235,16 +286,85 @@ nodo *infijaPostfija(char expresion[]){
     }
     return postFija;
 }
-/*--------------------------------------------------------------------------------------------------------------------*/
 
 /*--------------------------------------------------------------------------------------------------------------------*/
-
+/*nueva pila tipo float*/
+nodoFloat *crearPilaFloat(nodoFloat *pila){
+    return pila =NULL;
+}
 /*--------------------------------------------------------------------------------------------------------------------*/
-
+/*Empujar dato a la pila*/
+nodoFloat *pushFloat(float valor, nodoFloat *pila){
+    nodoFloat *nodoNuevo;
+    nodoNuevo = (nodoFloat*) malloc (sizeof(nodoFloat));
+    if(nodoNuevo != NULL){
+        nodoNuevo->valor = valor;
+        nodoNuevo->siguiente= pila;
+        pila= nodoNuevo;
+    }
+    return  pila;
+}
 /*--------------------------------------------------------------------------------------------------------------------*/
-
+/*sacar dato de pila*/
+nodoFloat *popFloat(float *valor, nodoFloat *pila){
+    nodoFloat *nodoAuxiliar;
+    float dato;
+    if(pila == NULL){
+        printf("\nPILA VACIA");
+    }else{
+        nodoAuxiliar = pila;
+        dato = nodoAuxiliar->valor;
+        pila = nodoAuxiliar->siguiente;
+        *valor = dato;
+        free(nodoAuxiliar);
+    }
+    return pila;
+}
 /*--------------------------------------------------------------------------------------------------------------------*/
-
+/*calcula el tipo de operacion*/
+float operacion(float operando1, float operando2, char operador){
+    switch(operador) {
+        case '+' :
+            return operando1+operando2;
+            break;
+        case '-' :
+            return operando1-operando2;
+            break;
+        case '*' :
+            return operando1*operando2;
+            break;
+        case '/' :
+            return operando1/operando2;
+            break;
+        case '^' :
+            return pow(operando1 , operando2);
+            break;
+    }
+}
 /*--------------------------------------------------------------------------------------------------------------------*/
+/*calcular el resultado*/
+float evaluarPostfija(char expresion[]){
+    nodoFloat *pila;
+    int longitudExpresion;
+    char valor;
+    float operando1, operando2, resultado;
 
+    pila = crearPilaFloat(pila);
+
+    longitudExpresion = strlen(expresion);
+    for (int i = 0; i < longitudExpresion; ++i) {
+        if((expresion[i] >= 48) && (expresion[i] <= 57)){
+            valor = expresion[i];
+            pila=pushFloat(atof(&valor), pila);
+        }else {
+            if(esOperador(expresion[i])){
+                pila = popFloat(&operando2, pila);
+                pila = popFloat(&operando1, pila);
+                resultado = operacion(operando1, operando2, expresion[i]);
+                pila = pushFloat(resultado, pila);
+            }
+        }
+    }
+    return pila->valor;
+}
 /*--------------------------------------------------------------------------------------------------------------------*/

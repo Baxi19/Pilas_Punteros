@@ -3,9 +3,3 @@
 
 CMakeFiles/Pilas_Punteros.dir/main.c.obj: ../main.c
 
-CMakeFiles/Pilas_Punteros.dir/metodosPila.c.obj: ../metodosPila.c
-CMakeFiles/Pilas_Punteros.dir/metodosPila.c.obj: ../pila.h
-
-CMakeFiles/Pilas_Punteros.dir/pila.c.obj: ../pila.c
-CMakeFiles/Pilas_Punteros.dir/pila.c.obj: ../pila.h
-
